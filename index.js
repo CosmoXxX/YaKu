@@ -493,11 +493,60 @@ if (command === 'role-info') {
 if (command === 'help')
     let helpembed = new Discord.RichEmbed()
    .addField('🛠 **Utilitaire **:', '``!avatar [user]`` , ``!bvn [user]`` ,  ``!bot-info`` , ``!serveur-info`` , ``!role-info [rôle]`` , ``!google [recherche]`` , ``!youtube [recherche]``')
-   .addField('🎉  **FUN** :', '``!8ball [questions]`` , ``!morse [mot]')
+   .addField('🎉  **FUN** :', '``!8ball [questions]`` , ``!morse [mot] , ``!reverse [message]``')
    .addField(':camping:   **Images** :', '``!avatar [user]``')   .addField('🚓 **Modérations** :', '``!ban [user] [raison]`` , ``!kick [user] [raison]`` , ``!warn [user] [raison]`` , ``!mute [user] [raison]`` , ``!purge [2-100]`` , ``!unmute [user]`` , ``!addrole [user] [role]`` , ``!removerole [user] [role]``')
    .addField('📌  **Autres** :', '``!ping``')
    message.channel.send(helpembed);
 }    
+
+if (command === 'reverse') {
+
+                    const embed = new Discord.RichEmbed()
+                    .setAuthor(`${message.author.username}`, message.author.avatarURL)
+  
+                    .setColor("00FFFF")
+                    .setDescription("``!reverse [message] ``")
+                    .setFooter("erreur", 'https://cdn.discordapp.com/attachments/575719847418396733/582180312306679808/476014391427334144.png')
+                    .setTimestamp()        
+                  if (args.length < 1) {
+                    return message.channel.send(embed)
+                }
+                message.channel.send(args.join(' ').split('').reverse().join(''));
+              }
+
+pour souhaiter ma bienvenue à qq :
+ if (command === 'bvn') {
+      var user = message.mentions.users.first()
+
+      var amount = args[1]
+  
+      const embed2 = new Discord.RichEmbed()
+        
+        .setAuthor(`${message.author.username}`, message.author.avatarURL)
+  
+        .setColor("00FFFF")
+        .setDescription("``b!bvn [user] ``")
+        .setFooter("erreur", 'https://cdn.discordapp.com/attachments/575719847418396733/581888626338562075/valider.png')
+        .setTimestamp()        
+      if (!user) return message.channel.send(embed2);
+
+    message.delete().catch(O_o=>{});
+
+    const embed = new Discord.RichEmbed()
+    
+    .setAuthor("Bienvenue !", "https://cdn.discordapp.com/attachments/590777266557157386/590927544006475787/JPEG_20190619_182623.jpg")
+
+    .setColor("00FFFF")
+    .setFooter("bvn lorsque qu'il y a un nouveau", "https://cdn.discordapp.com/attachments/590777266557157386/590927544006475787/JPEG_20190619_182623.jpg")
+    
+    .setThumbnail(message.author.avatarURL)
+    .setTimestamp()
+
+    .addField(`Hey ! Soit le bienvenue sur le serveur **${user.username}** ❤️`, `De la part de **${message.author.username}**`) 
+   
+    message.channel.send(embed);
+}
+ 
  });
 
 client.login(settings.token);
