@@ -546,7 +546,20 @@ pour souhaiter ma bienvenue à qq :
    
     message.channel.send(embed);
 }
- 
+
+if (command === 'pile ou face') {
+                          
+let replies = ["Pile.", "face.",];
+                      
+let result = Math.floor((Math.random() * replies.length));
+                      
+let embed = new Discord.RichEmbed()
+.setAuthor(message.author.username, message.author.avatarURL)
+.setColor("#00ff00")
+.addField("Résultat", replies[result])
+                      
+ message.channel.send(embed)
+} 
  });
 
 client.login(settings.token);
