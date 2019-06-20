@@ -7,7 +7,7 @@ client.on('ready', () => {
 
 const settings = {
     prefix: '!',
-    token: 'NTkwNTYwNDQwNjU2ODU1MDUz.XQpIbA.FagpN8yYvKqUp56gHXKN23B-xAE'
+    token: 'NTkwNT12YwNDQwNjU2ODU1MDUz.XQpIbA.FagpN8yYvKqUp56gHXKN23B-xAE'
   }
  
   client.on('message', async message => {
